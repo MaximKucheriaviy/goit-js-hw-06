@@ -12,3 +12,10 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const resultHtml = images.reduce((total, item) => {
+  const newItem =  `<li class = "gallery__item"><img class = "gallery__img" src="${item.url}" alt = "${item.alt}" width = "1260"/></li>`;
+  total += newItem;
+  return total;
+}, ""); 
+document.querySelector('.gallery').insertAdjacentHTML("afterbegin", resultHtml);
